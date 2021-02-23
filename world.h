@@ -30,6 +30,10 @@ struct World {
 	}
 };
 
+namespace eti {
+	uConciliate w_weather(WEATHERS weather);
+}
+
 namespace Worlds {
 	Function SetCodeName(World& w, std::string new_name);
 	Function SetName(World& w, std::string new_name);
