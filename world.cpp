@@ -1,9 +1,21 @@
 #include "world.h"
 
 namespace Worlds {
+	Function SetCodeName(World& w, std::string new_name) {
+		if (new_name.empty()) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] Nelze " << Display(TEXTS::TITLE_WORLD) << "u nastavit žádné jméno!" << std::endl;
+		else if (w.name.compare(new_name) == 0) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] " << Display(TEXTS::TITLE_WORLD) << " " << w.name << "[" << w.ingame_name << "] uz ma toto jmeno!" << std::endl;
+		else {
+			std::cout << "[" << Display(TEXTS::TITLE_DEBUG) << "] Nastavuji " << Display(TEXTS::TITLE_WORLD) << "u jmenem " << w.name << "[" << w.ingame_name << "] kodove jmeno na " << new_name << std::endl;
+			w.name = new_name;
+		}
+	}
 	Function SetName(World& w, std::string new_name) {
-		std::cout << "[" << Display(TEXTS::TITLE_DEBUG) << "] Nastaveni " << Display(TEXTS::TITLE_WORLD) << " " << w.name << " jmena na " << new_name << std::endl;
-		w.name = new_name;
+		if (new_name.empty()) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] Nelze " << Display(TEXTS::TITLE_WORLD) << "u nastavit žádné jméno!" << std::endl;
+		else if (w.ingame_name.compare(new_name) == 0) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] " << Display(TEXTS::TITLE_WORLD) << " " << w.name << "[" << w.ingame_name << "] uz ma toto jmeno!" << std::endl;
+		else {
+			std::cout << "[" << Display(TEXTS::TITLE_DEBUG) << "] Nastavuji " << Display(TEXTS::TITLE_WORLD) << "u jmenem " << w.name << "[" << w.ingame_name << "] kodove jmeno na " << new_name << std::endl;
+			w.ingame_name = new_name;
+		}
 	}
 	Function SetSize(World& w, float new_x, float new_y, float new_x2, float new_y2) {
 		std::cout << "[" << Display(TEXTS::TITLE_DEBUG) << "] Nastaveni " << Display(TEXTS::TITLE_WORLD) << " " << w.name << " velikost na " 
@@ -40,6 +52,15 @@ namespace Worlds {
 	}
 	Function SetWeather(World& w, WEATHERS weather) {
 		w.weather = weather;
+	}
+	Function Print(World& w) {
+		std::cout << "-------- " << Display(TEXTS::TITLE_WORLD) << " --------" << std::endl;
+		std::cout << "Codename: " << w.name << std::endl;
+		std::cout << "Name: " << w.ingame_name << std::endl;
+		std::cout << "Velikost: " << w.x[0] << "/" << w.y[0] << " " << w.x[1] << "/" << w.y[1] << std::endl;
+		std::cout << Display(TEXTS::TITLE_TIME) << " = " << Worlds::GetFullTime(w) << std::endl;
+		std::cout << Display(TEXTS::TITLE_WEATHER) << " = " << Worlds::GetWeatherN(w) << std::endl;
+		std::cout << "-------- " << Display(TEXTS::TITLE_WORLD) << " --------" << std::endl;
 	}
 }
 
