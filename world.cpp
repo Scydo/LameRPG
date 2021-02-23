@@ -1,8 +1,14 @@
 #include "world.h"
 
+namespace eti {
+	uConciliate w_weather(WEATHERS weather) {
+		return static_cast<uConciliate>(weather);
+	}
+}
+
 namespace Worlds {
 	Function SetCodeName(World& w, std::string new_name) {
-		if (new_name.empty()) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] Nelze " << Display(TEXTS::TITLE_WORLD) << "u nastavit žádné jméno!" << std::endl;
+		if (new_name.empty()) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] Nelze " << Display(TEXTS::TITLE_WORLD) << "u nastavit zadne jmeno!" << std::endl;
 		else if (w.name.compare(new_name) == 0) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] " << Display(TEXTS::TITLE_WORLD) << " " << w.name << "[" << w.ingame_name << "] uz ma toto jmeno!" << std::endl;
 		else {
 			std::cout << "[" << Display(TEXTS::TITLE_DEBUG) << "] Nastavuji " << Display(TEXTS::TITLE_WORLD) << "u jmenem " << w.name << "[" << w.ingame_name << "] kodove jmeno na " << new_name << std::endl;
@@ -10,7 +16,7 @@ namespace Worlds {
 		}
 	}
 	Function SetName(World& w, std::string new_name) {
-		if (new_name.empty()) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] Nelze " << Display(TEXTS::TITLE_WORLD) << "u nastavit žádné jméno!" << std::endl;
+		if (new_name.empty()) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] Nelze " << Display(TEXTS::TITLE_WORLD) << "u nastavit zadne jmeno!" << std::endl;
 		else if (w.ingame_name.compare(new_name) == 0) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] " << Display(TEXTS::TITLE_WORLD) << " " << w.name << "[" << w.ingame_name << "] uz ma toto jmeno!" << std::endl;
 		else {
 			std::cout << "[" << Display(TEXTS::TITLE_DEBUG) << "] Nastavuji " << Display(TEXTS::TITLE_WORLD) << "u jmenem " << w.name << "[" << w.ingame_name << "] kodove jmeno na " << new_name << std::endl;
