@@ -30,7 +30,7 @@ Conciliate main() {
 
 	// print:
 	std::cout << Display(TEXTS::TITLE_TIME) << " je " << Worlds::GetFullTime(Default) << std::endl;
-	std::cout << Display(TEXTS::TITLE_WEATHER) << " je " << Worlds::GetWeatherN(Default) << " cislo = " << static_cast<int>(weat) << std::endl;
+	std::cout << Display(TEXTS::TITLE_WEATHER) << " je " << Worlds::GetWeatherN(Default) << " cislo = " << eti::w_weather(weat) << std::endl;
 	Worlds::Print(Default);
 	/*
 		[Debug] Nastavuji Svetu jmenem undefined-world296[undefined-world] kodove jmeno na default
