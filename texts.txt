@@ -1,0 +1,70 @@
+static const char* _texts[] = { 
+	"Entita", 
+	"Clovek", 
+	"Hrac",
+	"Predmet",
+	"Zbroj", 
+	"Zbran", 
+	"Debug",
+	"Chyba",
+	"Svet",
+	"Cas",
+	"Pocasi",
+	"Typ",
+	"undefined-entity",
+	"undefined-human",
+	"undefined-world",
+	"undefined-item",
+	"undefined-armor",
+	"undefined-weapon",
+	"undefined-scroll",
+	"undefined-potion",
+	"undefined-quest-item",
+	""
+};
+
+static const char* _weathers[] = {
+	"Jasno",
+	"Dest",
+	"Bourka",
+	"Snezeni",
+	"Barevne"
+};
+
+static const char* _item_types[] = {
+	"Quest Item",
+	"Junk",
+	"Potion",
+	"Food",
+	"Armor",
+	"Shield",
+	"Weapon"
+	"Arrow",
+	"Bolt"
+};
+
+static const char* _item_rarity[] = {
+	"Common",
+	"Uncommon",
+	"Rare",
+	"Magic",
+	"Legendary"
+};
+
+static const char* _item_attribute[] = {
+	"Protection",
+	"Damage",
+	"Health",
+	"Mana",
+	"Health Regeneration",
+	"Mana Regeneration",
+	"Health Boost",
+	"Mana Boost",
+	"Healing",
+	"Restore mana",
+	"Speed",
+	"Critical damage",
+	"Critical chance",
+	"",
+	""
+};
