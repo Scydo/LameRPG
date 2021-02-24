@@ -1,3 +1,5 @@
+![title](https://github.com/Scydo/LameRPG/blob/main/title.png)
+
 ## Světy
 **Konstruktor**
 
