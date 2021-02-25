@@ -68,3 +68,11 @@ static const char* _item_attribute[] = {
 	"",
 	""
 };
+
+static const char* _armor_sets[] = {
+	"Helmet",
+	"Chest",
+	"Arms",
+	"Legs",
+	"Boots"
+};
