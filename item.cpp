@@ -4,7 +4,7 @@ namespace eti {
 	uConciliate i_type(enum class ITEM_TYPES type) {
 		return static_cast<uConciliate>(type);
 	}
-	uConciliate i_rarity(enum class ITEM_RARITIES rarity) {
+	uConciliate i_quality(enum class ITEM_QUALITY rarity) {
 		return static_cast<uConciliate>(rarity);
 	}
 	uConciliate i_att(enum class ATTRIBUTES att) {
@@ -17,8 +17,8 @@ namespace Items {
 		Ethons Type(enum class ITEM_TYPES type) {
 			return _item_types[eti::i_type(type)];
 		}
-		Ethons Rarity(enum class ITEM_RARITIES rarity) {
-			return _item_rarity[eti::i_rarity(rarity)];
+		Ethons Quality(enum class ITEM_QUALITY quality) {
+			return _item_quality[eti::i_quality(quality)];
 		}
 		Ethons Attribute(enum class ATTRIBUTES att) {
 			return _item_attribute[eti::i_att(att)];
@@ -42,9 +42,9 @@ namespace Items {
 		}
 	}
 
-	Function SetRarity(struct Item& i, enum class ITEM_RARITIES rarity) {
+	Function SetQuality(struct Item& i, enum class ITEM_QUALITY quality) {
 		std::cout << "[" << Display(TEXTS::TITLE_DEBUG) << "] Nastavuji " << Display(TEXTS::TITLE_ITEM) << "u jmenem " << i.name << "[" << i.ingame_name << "] raritu " << Items::Name::Rarity(rarity) << std::endl;
-		i.rarity = rarity;
+		i.quality = quality;
 	}
 
 	Function AddAttribute(struct Item& i, enum class ATTRIBUTES att, uConciliate value) {
@@ -79,7 +79,7 @@ namespace Items {
 	}
 
 	Ethons GetRarity(struct Item& i) {
-		return Items::Name::Rarity(i.rarity);
+		return Items::Name::Quality(i.quality);
 	}
 
 	Ethons GetCodeName(struct Item& i) {
@@ -112,7 +112,7 @@ namespace Items {
 		std::cout << "-------- " << Display(TEXTS::TITLE_ITEM) << " --------" << std::endl;
 		std::cout << "Codename: " << Items::GetCodeName(i) << std::endl;
 		std::cout << "Ingame name: " << Items::GetName(i) << std::endl;
-		std::cout << Items::Name::Rarity(i.rarity) << std::endl;
+		std::cout << Items::Name::Quality(i.quality) << std::endl;
 		std::cout << Display(TEXTS::TITLE_TYPE) << ": " << Items::GetType(i) << std::endl;
 		std::cout << "Price B:" << Items::GetBuyingPrice(i) << " S:" << Items::GetSellingPrice(i) << std::endl;
 		for (std::size_t index = 0; index < ATT_MAX; index++) {
