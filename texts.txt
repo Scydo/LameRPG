@@ -43,11 +43,13 @@ static const char* _item_types[] = {
 	"Bolt"
 };
 
-static const char* _item_rarity[] = {
+static const char* _item_quality[] = {
 	"Common",
 	"Uncommon",
 	"Rare",
+	"Epic",
 	"Magic",
+	"Master",
 	"Legendary"
 };
 
