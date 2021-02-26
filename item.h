@@ -28,7 +28,7 @@ const enum class ITEM_QUALITY : const short {
 };
 
 struct Item {
-private:
+protected:
 	ITEM_TYPES type;
 public:
 	Ethons name;
