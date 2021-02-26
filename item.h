@@ -17,12 +17,14 @@ const enum class ITEM_TYPES : const short {
 	WEAPON_TYPE_BOLT
 };
 
-const enum class ITEM_RARITIES : const short {
-	RARITY_COMMON,
-	RARIRTY_UNCOMMON,
-	RARITY_RARE,
-	RARITY_MAGIC,
-	RARITY_LEGENDARY
+const enum class ITEM_QUALITY : const short {
+	QUALITY_COMMON,
+	QUALITY_UNCOMMON,
+	QUALITY_RARE,
+	QUALITY_EPIC,
+	QUALITY_MAGIC,
+	QUALITY_MASTER,
+	QUALITY_LEGENDARY
 };
 
 struct Item {
@@ -31,7 +33,7 @@ private:
 public:
 	Ethons name;
 	Ethons ingame_name;
-	ITEM_RARITIES rarity;
+	ITEM_QUALITY rarity;
 	uConciliate price[2], attributes[ATT_MAX];
 public:
 	ITEM_TYPES const gettype() const { 
@@ -41,7 +43,7 @@ public:
 		this->name = (Display(TEXTS::UNDEF_ITEM) + std::to_string(rand() % 0xFF));
 		this->ingame_name = Display(TEXTS::UNDEF_ITEM);
 		this->type = ITEM_TYPES::ITEM_TYPE_JUNK;
-		this->rarity = ITEM_RARITIES::RARITY_COMMON;
+		this->rarity = ITEM_RARITIES::QUALITY_COMMON;
 		this->price[BUYING] = this->price[SELLING] = 0;
 		for (uConciliate index = 0; index < ATT_MAX; index++) this->attributes[index] = 0;
 	}
@@ -54,20 +56,20 @@ public:
 };
 
 namespace eti {
-	uConciliate i_type(ITEM_TYPES type);
-	uConciliate i_rarity(ITEM_RARITIES rarity);
-	uConciliate i_att(ATTRIBUTES att);
+	uConciliate i_type(enum class ITEM_TYPES type);
+	uConciliate i_quality(enum class ITEM_QUALITY rarity);
+	uConciliate i_att(enum class ATTRIBUTES att);
 }
 
 namespace Items {
 	namespace Name {
 		Ethons Type(enum class ITEM_TYPES type);
-		Ethons Rarity(enum class ITEM_RARITIES rarity);
+		Ethons Quality(enum class ITEM_QUALITY quality);
 		Ethons Attribute(enum class ATTRIBUTES att);
 	}
 	Function SetName(struct Item& i, std::string new_name);
 	Function SetCodeName(struct Item& i, std::string new_name);
-	Function SetRarity(struct Item& i, enum class ITEM_RARITIES rarity);
+	Function SetQuality(struct Item& i, enum class ITEM_QUALITY quality);
 	Function AddAttribute(struct Item& i, enum class ATTRIBUTES att, uConciliate value);
 	Collation HasAttribute(struct Item& i, enum class ATTRIBUTES att);
 	Function RemoveAttribute(struct Item& i, enum class ATTRIBUTES att);
