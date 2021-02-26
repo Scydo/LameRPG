@@ -33,7 +33,7 @@ private:
 public:
 	Ethons name;
 	Ethons ingame_name;
-	ITEM_QUALITY rarity;
+	ITEM_QUALITY quality;
 	uConciliate price[2], attributes[ATT_MAX];
 public:
 	ITEM_TYPES const gettype() const { 
