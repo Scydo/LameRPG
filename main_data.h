@@ -4,6 +4,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <stdio.h>
 
 using Function = void;
 using Collation = bool;
