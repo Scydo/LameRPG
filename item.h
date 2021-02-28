@@ -64,7 +64,7 @@ namespace eti {
 namespace Items {
 	namespace Name {
 		Ethons Type(enum class ITEM_TYPES type);
-		Ethons Quality(enum class ITEM_RARITIES quality);
+		Ethons Quality(enum class ITEM_QUALITY quality);
 		Ethons Attribute(enum class ATTRIBUTES att);
 	}
 	Function SetName(struct Item& i, std::string new_name);
