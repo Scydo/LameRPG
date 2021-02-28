@@ -78,7 +78,7 @@ namespace Items {
 		}
 	}
 
-	Ethons GetRarity(struct Item& i) {
+	Ethons GetQuality(struct Item& i) {
 		return Items::Name::Quality(i.quality);
 	}
 

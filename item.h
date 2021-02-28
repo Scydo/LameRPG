@@ -57,7 +57,7 @@ public:
 
 namespace eti {
 	uConciliate i_type(enum class ITEM_TYPES type);
-	uConciliate i_quality(enum class ITEM_QUALITY rarity);
+	uConciliate i_quality(enum class ITEM_QUALITY quality);
 	uConciliate i_att(enum class ATTRIBUTES att);
 }
 
@@ -75,7 +75,7 @@ namespace Items {
 	Function RemoveAttribute(struct Item& i, enum class ATTRIBUTES att);
 	Ethons GetName(struct Item& i);
 	Ethons GetType(struct Item& i);
-	Ethons GetRarity(struct Item& i);
+	Ethons GetQuality(struct Item& i);
 	Function SetPrice(struct Item& i, Conciliate buying, Conciliate selling);
 	uConciliate GetBuyingPrice(struct Item& i);
 	uConciliate GetSellingPrice(struct Item& i);
