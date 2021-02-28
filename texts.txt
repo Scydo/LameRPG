@@ -78,3 +78,19 @@ static const char* _armor_sets[] = {
 	"Legs",
 	"Boots"
 };
+
+static const char* _weapon_handy[] = {
+	"1H Weapon", 
+	"2H Weapon", 
+	"Shiled"
+};
+
+static const char* _weapon_types[] = {
+	"Sword",
+	"Long sword",
+	"Axe",
+	"Hammer",
+	"Bow",
+	"Crossbow",
+	"Shield"
+};

@@ -1,7 +1,7 @@
 #include "world.h"
 
 namespace eti {
-	uConciliate w_weather(WEATHERS weather) {
+	uConciliate w_weather(enum class WEATHERS weather) {
 		return static_cast<uConciliate>(weather);
 	}
 }

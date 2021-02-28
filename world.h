@@ -38,7 +38,7 @@ struct World {
 };
 
 namespace eti {
-	uConciliate w_weather(WEATHERS weather);
+	uConciliate w_weather(enum class WEATHERS weather);
 }
 
 namespace Worlds {

@@ -43,7 +43,7 @@ public:
 		this->name = (Display(TEXTS::UNDEF_ITEM) + std::to_string(rand() % 0xFF));
 		this->ingame_name = Display(TEXTS::UNDEF_ITEM);
 		this->type = ITEM_TYPES::ITEM_TYPE_JUNK;
-		this->quality = ITEM_RARITIES::QUALITY_COMMON;
+		this->quality = ITEM_QUALITY::QUALITY_COMMON;
 		this->price[BUYING] = this->price[SELLING] = 0;
 		for (uConciliate index = 0; index < ATT_MAX; index++) this->attributes[index] = 0;
 	}
@@ -64,7 +64,7 @@ namespace eti {
 namespace Items {
 	namespace Name {
 		Ethons Type(enum class ITEM_TYPES type);
-		Ethons Quality(enum class ITEM_QUALITY quality);
+		Ethons Quality(enum class ITEM_RARITIES quality);
 		Ethons Attribute(enum class ATTRIBUTES att);
 	}
 	Function SetName(struct Item& i, std::string new_name);

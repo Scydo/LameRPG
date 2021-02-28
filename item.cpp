@@ -4,8 +4,8 @@ namespace eti {
 	uConciliate i_type(enum class ITEM_TYPES type) {
 		return static_cast<uConciliate>(type);
 	}
-	uConciliate i_quality(enum class ITEM_QUALITY rarity) {
-		return static_cast<uConciliate>(rarity);
+	uConciliate i_quality(enum class ITEM_QUALITY quality) {
+		return static_cast<uConciliate>(quality);
 	}
 	uConciliate i_att(enum class ATTRIBUTES att) {
 		return static_cast<uConciliate>(att);
@@ -43,7 +43,7 @@ namespace Items {
 	}
 
 	Function SetQuality(struct Item& i, enum class ITEM_QUALITY quality) {
-		std::cout << "[" << Display(TEXTS::TITLE_DEBUG) << "] Nastavuji " << Display(TEXTS::TITLE_ITEM) << "u jmenem " << i.name << "[" << i.ingame_name << "] raritu " << Items::Name::Rarity(rarity) << std::endl;
+		std::cout << "[" << Display(TEXTS::TITLE_DEBUG) << "] Nastavuji " << Display(TEXTS::TITLE_ITEM) << "u jmenem " << i.name << "[" << i.ingame_name << "] raritu " << Items::Name::Quality(quality) << std::endl;
 		i.quality = quality;
 	}
 
