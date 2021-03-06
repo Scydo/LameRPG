@@ -1,9 +1,11 @@
 #ifndef  _ITEM
 #define _ITEM
-#include "attributes.h"
+#include "effects.h"
 
 constexpr uConciliate SELLING = (0);
 constexpr uConciliate BUYING =  (1);
+
+static uConciliate _items;
 
 const enum class ITEM_TYPES : const short {
 	ITEM_TYPE_QUEST,
@@ -34,18 +36,19 @@ public:
 	Ethons name;
 	Ethons ingame_name;
 	ITEM_QUALITY quality;
-	uConciliate price[2], attributes[ATT_MAX];
+	uConciliate price[2], attributes[static_cast<uConciliate>(ATTRIBUTES::ATT_SIZE_T)];
 public:
 	ITEM_TYPES const gettype() const { 
 		return this->type; 
 	}
 	Item () {
-		this->name = (Display(TEXTS::UNDEF_ITEM) + std::to_string(rand() % 0xFF));
+		this->name = (Display(TEXTS::UNDEF_ITEM) + "_" + std::to_string(_items));
 		this->ingame_name = Display(TEXTS::UNDEF_ITEM);
 		this->type = ITEM_TYPES::ITEM_TYPE_JUNK;
 		this->quality = ITEM_QUALITY::QUALITY_COMMON;
 		this->price[BUYING] = this->price[SELLING] = 0;
 		for (uConciliate index = 0; index < ATT_MAX; index++) this->attributes[index] = 0;
+		_items++;
 	}
 public:
 	Item (Ethons name, Ethons ingame_name, ITEM_TYPES type) : Item() {

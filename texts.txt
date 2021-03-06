@@ -94,3 +94,11 @@ static const char* _weapon_types[] = {
 	"Crossbow",
 	"Shield"
 };
+
+static const char* _entity_types[] = {
+	"Monster",
+	"Animal",
+	"Human",
+	"Ghost",
+	"Undead"
+};

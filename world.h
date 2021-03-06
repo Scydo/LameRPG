@@ -4,6 +4,8 @@ constexpr unsigned short int HOURS = 0;
 constexpr unsigned short int MINUTES = 1;
 constexpr unsigned short int DAYS = 2;
 
+static uConciliate _worlds;
+
 const enum class WEATHERS : const short {
 	WEATHER_CLEAR,
 	WEATHER_RAIN,
@@ -22,12 +24,13 @@ struct World {
 	WEATHERS weather;
 	uConciliate time[3];
 	World () {
-		this->name = (Display(TEXTS::UNDEF_WORLD) + std::to_string(std::rand() + 0xFF));
+		this->name = (Display(TEXTS::UNDEF_WORLD) + "_" + std::to_string(_worlds));
 		this->ingame_name = Display(TEXTS::UNDEF_WORLD);
 		this->weather = WEATHERS::WEATHER_CLEAR;
 		this->x[0] = this->y[0] = this->x[1] = this->y[1] = 100.0F;
 		this->height = 3.0F;
 		time[DAYS] = time[HOURS] = time[MINUTES] = 0;
+		_worlds++;
 	}
 	World(Ethons name, Ethons ingame_name, float x, float x2, float y, float y2, float height) : World() {
 		this->name = name; this->ingame_name = ingame_name; 

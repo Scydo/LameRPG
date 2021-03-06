@@ -2,6 +2,8 @@
 #define _ARMOR
 #include "item.h"
 
+static uConciliate _armors;
+
 const enum class ARMOR_SETS : const short {
 	ARMOR_SET_HELMET,
 	ARMOR_SET_CHEST,
@@ -23,11 +25,12 @@ public:
 	}
 public:
 	Armor () : Item () {
-		this->name = (Display(TEXTS::UNDEF_ARMOR) + std::to_string(rand() % 0x000000FF));
+		this->name = (Display(TEXTS::UNDEF_ARMOR) + "_" + std::to_string(_armors));
 		this->type = ITEM_TYPES::ITEM_TYPE_ARMOR;
 		this->ingame_name = Display(TEXTS::UNDEF_ARMOR);
 		this->req_level = 1;
 		this->set = ARMOR_SETS::ARMOR_SET_HELMET;
+		_armors++;
 	}
 public:
 	Armor(Ethons name, Ethons ingame_name, ARMOR_SETS set, uConciliate pre_armor = 0x00000001) : Armor () {

@@ -13,19 +13,19 @@ namespace Armors {
 		}
 	}
 	Function SetCodeName(struct Armor& a, Ethons new_name) {
-		if (new_name.empty()) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] Nelze " << Display(TEXTS::TITLE_ITEM) << "u nastavit žádné jméno!" << std::endl;
+		if (new_name.empty()) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] Nelze " << Display(TEXTS::TITLE_ARMOR) << "i nastavit žádné jméno!" << std::endl;
 		else if (a.ingame_name.compare(new_name) == 0) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] " << Display(TEXTS::TITLE_ITEM) << " " << a.name << "[" << a.ingame_name << "] uz ma toto jmeno!" << std::endl;
 		else {
-			std::cout << "[" << Display(TEXTS::TITLE_DEBUG) << "] Nastavuji " << Display(TEXTS::TITLE_ITEM) << "u jmenem " << a.name << "[" << a.ingame_name << "] herni jmeno na " << new_name << std::endl;
+			std::cout << "[" << Display(TEXTS::TITLE_DEBUG) << "] Nastavuji " << Display(TEXTS::TITLE_ARMOR) << "i jmenem " << a.name << "[" << a.ingame_name << "] herni jmeno na " << new_name << std::endl;
 			a.ingame_name = new_name;
 		}
 	}
 
 	Function SetName(struct Armor& a, Ethons new_name) {
-		if (new_name.empty()) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] Nelze " << Display(TEXTS::TITLE_ITEM) << "u nastavit žádné jméno!" << std::endl;
-		else if (a.name.compare(new_name) == 0) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] " << Display(TEXTS::TITLE_ITEM) << " " << a.name << "[" << a.ingame_name << "] uz ma toto jmeno!" << std::endl;
+		if (new_name.empty()) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] Nelze " << Display(TEXTS::TITLE_ARMOR) << "u nastavit žádné jméno!" << std::endl;
+		else if (a.name.compare(new_name) == 0) std::cout << "[" << Display(TEXTS::TITLE_ERROR) << "] " << Display(TEXTS::TITLE_ARMOR) << " " << a.name << "[" << a.ingame_name << "] uz ma toto jmeno!" << std::endl;
 		else {
-			std::cout << "[" << Display(TEXTS::TITLE_DEBUG) << "] Nastavuji " << Display(TEXTS::TITLE_ITEM) << "u jmenem " << a.name << "[" << a.ingame_name << "] kodove jmeno na " << new_name << std::endl;
+			std::cout << "[" << Display(TEXTS::TITLE_DEBUG) << "] Nastavuji " << Display(TEXTS::TITLE_ITEM) << "i jmenem " << a.name << "[" << a.ingame_name << "] kodove jmeno na " << new_name << std::endl;
 			a.name = new_name;
 		}
 	}
