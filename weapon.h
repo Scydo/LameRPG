@@ -26,8 +26,7 @@ public:
 	WEAPON_HANDY const GetWHandy() const {
 		return this->handy;
 	}
-protected:
-	Weapon() : Item() {
+public: Weapon() : Item() {
 		this->name = Display(TEXTS::UNDEF_WEAPON) + "_" + std::to_string(_weapons);
 		this->ingame_name = Display(TEXTS::UNDEF_WEAPON);
 		this->type = ITEM_TYPES::ITEM_TYPE_WEAPON;
@@ -36,8 +35,7 @@ protected:
 		this->attributes[eti::i_att(ATTRIBUTES::ATT_DAMAGE)] = 1;
 		_weapons++;
 	}
-public:
-	Weapon (Ethons name, Ethons ingame_name, WEAPON_TYPES wtype, WEAPON_HANDY handy) : Item(name, ingame_name, ITEM_TYPES::ITEM_TYPE_WEAPON) {
+public: Weapon (Ethons name, Ethons ingame_name, WEAPON_TYPES wtype, WEAPON_HANDY handy) : Item(name, ingame_name, ITEM_TYPES::ITEM_TYPE_WEAPON) {
 		this->wtype = wtype;
 		this->handy = handy;
 		if (wtype != WEAPON_TYPES::WEAPON_SHIELD) this->attributes[eti::i_att(ATTRIBUTES::ATT_DAMAGE)] = 1;
@@ -50,7 +48,6 @@ namespace eti {
 	uConciliate w_type(enum class WEAPON_TYPES wtype);
 }
 
-
 namespace Weapons {
 	namespace Name {
 		Ethons Handle(enum class WEAPON_HANDY handy);
@@ -62,3 +59,5 @@ namespace Weapons {
 	WEAPON_HANDY GetHandy(struct Weapon& w);
 	WEAPON_TYPES GetType(struct Weapon& w);
 }
+//Weapon (Ethons name, Ethons ingame_name, WEAPON_TYPES wtype, WEAPON_HANDY handy) : Item(name, ingame_name, ITEM_TYPES::ITEM_TYPE_WEAPON)
+static Weapon NONE_SWORD("_none", "none", WEAPON_TYPES::WEAPON_SWORD, WEAPON_HANDY::WEAPON_1H);

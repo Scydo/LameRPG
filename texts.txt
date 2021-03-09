@@ -11,6 +11,7 @@ static const char* _texts[] = {
 	"Cas",
 	"Pocasi",
 	"Typ",
+	"Efekt",
 	"undefined-entity",
 	"undefined-human",
 	"undefined-world",
@@ -101,4 +102,27 @@ static const char* _entity_types[] = {
 	"Human",
 	"Ghost",
 	"Undead"
+};
+
+static const char* _effects[] = {
+	"Zvyseni zbroje",
+	"Snizeni zbroje",
+	"Zvyseni poskozeni",
+	"Snizeni poskozeni",
+	"Regenerace zivotu",
+	"Regenerace many",
+	"Snizena regenerace zivotu",
+	"Snizena regenerace many",
+	"Maximalni zivot",
+	"Maximalni mana",
+	"Snizeni poctu zivotu?",
+	"Snizeni poctu many?",
+	"Snizena rychlost",
+	"Snizene kriticke poskozeni",
+	"Snizena sance na krit. poskozeni",
+	"Otrava",
+	"Mraz",
+	"Ohen",
+	"Blesk",
+	"---"
 };

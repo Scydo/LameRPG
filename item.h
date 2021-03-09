@@ -30,18 +30,16 @@ const enum class ITEM_QUALITY : const short {
 };
 
 struct Item {
-protected:
-	ITEM_TYPES type;
+protected: ITEM_TYPES type;
 public:
 	Ethons name;
 	Ethons ingame_name;
 	ITEM_QUALITY quality;
 	uConciliate price[2], attributes[static_cast<uConciliate>(ATTRIBUTES::ATT_SIZE_T)];
-public:
 	ITEM_TYPES const gettype() const { 
 		return this->type; 
 	}
-	Item () {
+public: Item () {
 		this->name = (Display(TEXTS::UNDEF_ITEM) + "_" + std::to_string(_items));
 		this->ingame_name = Display(TEXTS::UNDEF_ITEM);
 		this->type = ITEM_TYPES::ITEM_TYPE_JUNK;
@@ -50,8 +48,7 @@ public:
 		for (uConciliate index = 0; index < ATT_MAX; index++) this->attributes[index] = 0;
 		_items++;
 	}
-public:
-	Item (Ethons name, Ethons ingame_name, ITEM_TYPES type) : Item() {
+public: Item (Ethons name, Ethons ingame_name, ITEM_TYPES type) : Item() {
 		this->name = name;
 		this->ingame_name = ingame_name;
 		this->type = type;

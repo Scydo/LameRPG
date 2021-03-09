@@ -23,8 +23,7 @@ public:
 	ARMOR_SETS const getset() const {
 		return this->set;
 	}
-public:
-	Armor () : Item () {
+public: Armor () : Item () {
 		this->name = (Display(TEXTS::UNDEF_ARMOR) + "_" + std::to_string(_armors));
 		this->type = ITEM_TYPES::ITEM_TYPE_ARMOR;
 		this->ingame_name = Display(TEXTS::UNDEF_ARMOR);
@@ -32,8 +31,7 @@ public:
 		this->set = ARMOR_SETS::ARMOR_SET_HELMET;
 		_armors++;
 	}
-public:
-	Armor(Ethons name, Ethons ingame_name, ARMOR_SETS set, uConciliate pre_armor = 0x00000001) : Armor () {
+public: Armor(Ethons name, Ethons ingame_name, ARMOR_SETS set, uConciliate pre_armor = 0x00000001) : Armor () {
 		this->name = name;
 		this->ingame_name = ingame_name;
 		this->set = set;

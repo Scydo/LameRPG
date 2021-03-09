@@ -18,12 +18,13 @@ const enum class WEATHERS : const short {
 };
 
 struct World {
+public:
 	Ethons name;
 	Ethons ingame_name;
 	float x[2], y[2], height;
 	WEATHERS weather;
 	uConciliate time[3];
-	World () {
+public: World () {
 		this->name = (Display(TEXTS::UNDEF_WORLD) + "_" + std::to_string(_worlds));
 		this->ingame_name = Display(TEXTS::UNDEF_WORLD);
 		this->weather = WEATHERS::WEATHER_CLEAR;
@@ -32,7 +33,7 @@ struct World {
 		time[DAYS] = time[HOURS] = time[MINUTES] = 0;
 		_worlds++;
 	}
-	World(Ethons name, Ethons ingame_name, float x, float x2, float y, float y2, float height) : World() {
+public: World(Ethons name, Ethons ingame_name, float x, float x2, float y, float y2, float height) : World() {
 		this->name = name; this->ingame_name = ingame_name; 
 		this->x[0] = x; this->x[1] = x2;
 		this->y[0] = y; this->y[1] = y2;
@@ -59,3 +60,5 @@ namespace Worlds {
 	Function SetWeather(struct World& w, enum class WEATHERS weather);
 	Function Print(struct World& w);
 }
+
+static World DefaultWorld("default", "Normalni", 1000.0F, 1000.0F, 1000.0F, 1000.0F, 255.0F);
